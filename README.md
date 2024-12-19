@@ -7,3 +7,6 @@ My data science and analytics projects
 2. R programming
 3. Looker
 4. Linear Regression Model using caret
+
+## Contact me
+E-mail: keereerat.2022@gmail.com
