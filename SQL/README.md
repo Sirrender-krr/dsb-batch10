@@ -9,5 +9,6 @@ theses tables are for learning purpose only. There are
 * State Lookup table
 * ER diagram
 * SQL real world questions
+* SQL questions solutions
 
 The ER diagram can be used to overview the whole picture of the relationship betweeen each table.
