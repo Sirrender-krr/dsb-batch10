@@ -11,6 +11,7 @@ from milk_production
 group by year
 order by year desc
 limit 6
+-- 91812000000
 
 /*Question 2
 Which states had cheese production greater than 100 million in April 2023? 
@@ -27,6 +28,7 @@ WHERE Year = 2023
 and period = 'APR'
 and value > 100000000
 group by period, state_ansi;
+-- 13
 
 /*Question 3
 Your manager wants to know how coffee production has changed over the years. 
@@ -41,6 +43,7 @@ from coffee_production
 where year >= 2011
 group by year
 order by year;
+-- 7600000
 
 /*Question 4
 There's a meeting with the Honey Council next week. Find the average honey production 
@@ -55,6 +58,7 @@ from honey_production
 where year >= 2020
 group by year
 order by year;
+-- 3133275
 
 /*Question 5
 The State Relations team wants a list of all states names with their corresponding ANSI codes. 
@@ -65,6 +69,7 @@ as
 select *
 from state_lookup
 where state = 'FLORIDA';
+-- 12
 
 /*Question 6
 For a cross-commodity report, can you list all states with their cheese production values, 
@@ -84,6 +89,7 @@ and year = 2023
 and period = 'APR'
 and state = 'NEW JERSEY'
 group by state, period;
+-- 4889000
 
 /*Question 7
 Can you find the total yogurt production for states in the year 2022 
@@ -103,6 +109,7 @@ and y.State_ANSI in (
   from cheese_production c
   where c.year = 2023)
 and y.State_ANSI = s.State_ANSI;
+-- 1171095000
 
 /*Question 8
 List all states from state_lookup that are missing from milk_production in 2023.
@@ -121,6 +128,7 @@ where s.state_ansi not in (
   distinct m.state_ansi
   from milk_production m
   where year = 2023));
+-- 26
   
 /*Question 9
 List all states with their cheese production values, 
@@ -140,3 +148,4 @@ on s.State_ANSI = c.State_ANSI
 where c.year = 2023
 and c.Period = 'APR'
 or c.period is null;
+-- NO
