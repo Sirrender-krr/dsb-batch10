@@ -61,14 +61,19 @@ order by year;
 -- 3133275
 
 /*Question 5
-The State Relations team wants a list of all states names with their corresponding ANSI codes. 
+5. The State Relations team wants a list of all states names with their corresponding ANSI codes. 
 Can you generate that list?
-What is the State_ANSI code for Florida?*/
+Query a list of the state that has not produced cheese. How many state did not produce cheese at all?*/
 CREATE view final_project_05
 as
-select *
-from state_lookup
-where state = 'FLORIDA';
+select 
+s.state,
+c.value
+from state_lookup s
+left join cheese_production c
+on s.State_ANSI = c.State_ANSI
+where c.Value is null
+group by s.state;
 -- 12
 
 /*Question 6
