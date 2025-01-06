@@ -1,4 +1,4 @@
-/*Question 1
+/*Request 1
 Can you find out the total milk production for 2023? 
 Your manager wants this information for the yearly report.
 What is the total milk production for 2023?*/
@@ -13,7 +13,7 @@ order by year desc
 limit 6
 -- 91812000000
 
-/*Question 2
+/*Request 2
 Which states had cheese production greater than 100 million in April 2023? 
 The Cheese Department wants to focus their marketing efforts there. 
 How many states are there?*/
@@ -30,7 +30,7 @@ and value > 100000000
 group by period, state_ansi;
 -- 13
 
-/*Question 3
+/*Request 3
 Your manager wants to know how coffee production has changed over the years. 
 Query a yearly comparison table and find out what is the total value of coffee production for 2011?*/
 
@@ -45,7 +45,7 @@ group by year
 order by year;
 -- 7600000
 
-/*Question 4
+/*Request 4
 There's a meeting with the Honey Council next week. 
 Query a yearly average comparison table of five years till 2022 and find the average honey production for 2022 so you're prepared.*/
 
@@ -60,7 +60,7 @@ group by year
 order by year;
 -- 3133275
 
-/*Question 5
+/*Request 5
 5. The State Relations team wants a list of all states names with their corresponding ANSI codes. Can you generate that list? 
 Query a list of the state that has not produced cheese. How many state did not produce cheese at all?*/
 
@@ -77,7 +77,7 @@ where c.Value is null
 group by s.state;
 -- 14
 
-/*Question 6
+/*Request 6
 For a cross-commodity report, can you list all states with their cheese production values in April of 2023? 
 What state product the most and how much?*/
 
@@ -96,7 +96,7 @@ group by state, period
 order by total desc;
 -- WISCONSIN 289699000
 
-/*Question 7
+/*Request 7
 Can you find the state and the total yogurt production for states in the year 2022 which also have cheese production data from 2023?
 This will help the Dairy Division in their planning.*/
 
@@ -115,7 +115,7 @@ and y.State_ANSI in (
 and y.State_ANSI = s.State_ANSI;
 -- 1171095000 CALIFORNIA
 
-/*Question 8
+/*Request 8
 List all states from state_lookup that are missing from milk_production in 2023.
 How many states are there?*/
 
@@ -134,7 +134,7 @@ where s.state_ansi not in (
   where year = 2023));
 -- 26
   
-/*Question 9
+/*Request 9
 List all states with their cheese production values and yogurt production values, including states that didn't produce any cheese or yogurt in April 2023. 
 Did IDAHO produce any cheese and any yogurt in April 2023?*/
 
