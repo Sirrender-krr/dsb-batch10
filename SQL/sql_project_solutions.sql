@@ -32,7 +32,7 @@ group by period, state_ansi;
 
 /*Question 3
 Your manager wants to know how coffee production has changed over the years. 
-What is the total value of coffee production for 2011?*/
+Query a yearly comparison table and find out what is the total value of coffee production for 2011?*/
 
 CREATE view final_project_03
 as
@@ -46,8 +46,8 @@ order by year;
 -- 7600000
 
 /*Question 4
-There's a meeting with the Honey Council next week. Find the average honey production 
-for 2022 so you're prepared.*/
+There's a meeting with the Honey Council next week. 
+Query a yearly average comparison table of five years till 2022 and find the average honey production for 2022 so you're prepared.*/
 
 CREATE view final_project_04
 as
@@ -61,9 +61,9 @@ order by year;
 -- 3133275
 
 /*Question 5
-5. The State Relations team wants a list of all states names with their corresponding ANSI codes. 
-Can you generate that list?
+5. The State Relations team wants a list of all states names with their corresponding ANSI codes. Can you generate that list? 
 Query a list of the state that has not produced cheese. How many state did not produce cheese at all?*/
+
 CREATE view final_project_05
 as
 select 
@@ -78,7 +78,7 @@ group by s.state;
 -- 14
 
 /*Question 6
-For a cross-commodity report, can you list all states with their cheese production values in April of 2023?
+For a cross-commodity report, can you list all states with their cheese production values in April of 2023? 
 What state product the most and how much?*/
 
 CREATE view final_project_06
@@ -135,7 +135,7 @@ where s.state_ansi not in (
 -- 26
   
 /*Question 9
-List all states with their cheese production values and yogurt production values, including states that didn't produce any cheese or yogurt in April 2023.
+List all states with their cheese production values and yogurt production values, including states that didn't produce any cheese or yogurt in April 2023. 
 Did IDAHO produce any cheese and any yogurt in April 2023?*/
 
 CREATE view final_project_09
