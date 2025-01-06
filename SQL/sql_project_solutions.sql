@@ -68,6 +68,7 @@ CREATE view final_project_05
 as
 select 
 s.state,
+s.state_ANSI,
 c.value
 from state_lookup s
 left join cheese_production c
