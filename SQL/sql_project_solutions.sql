@@ -77,9 +77,8 @@ group by s.state;
 -- 14
 
 /*Question 6
-For a cross-commodity report, can you list all states with their cheese production values, 
-even if they didn't produce any cheese in April of 2023?
-What is the total for NEW JERSEY?*/
+For a cross-commodity report, can you list all states with their cheese production values in April of 2023?
+What state product the most and how much?*/
 
 CREATE view final_project_06
 as
@@ -87,14 +86,14 @@ select
 c.year,
 c.period,
 s.state,
-c.value
+sum(c.value) total
 from cheese_production c, state_lookup s
 where c.State_ANSI = s.State_ANSI
 and year = 2023
 and period = 'APR'
-and state = 'NEW JERSEY'
-group by state, period;
--- 4889000
+group by state, period
+order by total desc;
+-- WISCONSIN 289699000
 
 /*Question 7
 Can you find the total yogurt production for states in the year 2022 
