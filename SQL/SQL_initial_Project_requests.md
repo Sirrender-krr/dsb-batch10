@@ -1,4 +1,4 @@
-#SQL Initial Project Questions
+#SQL Initial Project Requests
 1. Can you find out the table of total milk production for previous five years till 2023? Your manager wants this information for the yearly report.
 What is the total milk production for 2023?
 2. Which states had cheese production greater than 100 million in April 2023? The Cheese Department wants to focus their marketing efforts there. 
