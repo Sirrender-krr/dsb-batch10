@@ -55,10 +55,10 @@ select
 year,
 avg(value)
 from honey_production
-where year >= 2020
+where year between 2017 and 2022
 group by year
 order by year;
--- 3133275
+-- table
 
 /*Request 5
 5. The State Relations team wants a list of all states names with their corresponding ANSI codes. Can you generate that list? 
