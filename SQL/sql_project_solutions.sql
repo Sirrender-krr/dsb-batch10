@@ -58,7 +58,7 @@ from honey_production
 where year between 2017 and 2022
 group by year
 order by year;
--- table
+-- 3133275
 
 /*Request 5
 5. The State Relations team wants a list of all states names with their corresponding ANSI codes. Can you generate that list? 
