@@ -74,7 +74,7 @@ left join cheese_production c
 on s.State_ANSI = c.State_ANSI
 where c.Value is null
 group by s.state;
--- 12
+-- 14
 
 /*Question 6
 For a cross-commodity report, can you list all states with their cheese production values, 
