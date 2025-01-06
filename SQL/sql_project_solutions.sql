@@ -96,8 +96,7 @@ order by total desc;
 -- WISCONSIN 289699000
 
 /*Question 7
-Can you find the total yogurt production for states in the year 2022 
-which also have cheese production data from 2023? 
+Can you find the state and the total yogurt production for states in the year 2022 which also have cheese production data from 2023?
 This will help the Dairy Division in their planning.*/
 
 CREATE view final_project_07
@@ -113,7 +112,7 @@ and y.State_ANSI in (
   from cheese_production c
   where c.year = 2023)
 and y.State_ANSI = s.State_ANSI;
--- 1171095000
+-- 1171095000 CALIFORNIA
 
 /*Question 8
 List all states from state_lookup that are missing from milk_production in 2023.
@@ -135,9 +134,8 @@ where s.state_ansi not in (
 -- 26
   
 /*Question 9
-List all states with their cheese production values, 
-including states that didn't produce any cheese in April 2023.
-Did Delaware produce any cheese in April 2023?*/
+List all states with their cheese production values and yogurt production values, including states that didn't produce any cheese or yogurt in April 2023.
+Did IDAHO produce any cheese and any yogurt in April 2023?*/
 
 CREATE view final_project_09
 as
@@ -145,11 +143,12 @@ select
 s.state,
 c.period,
 c.year,
-c.value cheese_total
+c.value cheese_total,
+y.value yogurt_total
 from state_lookup s
-left join cheese_production c
-on s.State_ANSI = c.State_ANSI
+left join cheese_production c on s.State_ANSI = c.State_ANSI
+left join yogurt_production y on c.State_ANSI = y.State_ANSI
 where c.year = 2023
 and c.Period = 'APR'
-or c.period is null;
--- NO
+group by s.state;
+-- IDAHO pruduced cheese but did not produce yogurt in April 2023
