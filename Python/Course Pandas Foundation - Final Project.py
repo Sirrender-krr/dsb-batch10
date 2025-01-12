@@ -8,7 +8,7 @@
 # import data
 import pandas as pd
 import numpy as np
-df = pd.read_csv("sample-store.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/Sirrender-krr/dsb-batch10/refs/heads/main/Python/sample-store.csv")
 
 # preview top 5 rows
 df.head(10)
